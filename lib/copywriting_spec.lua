@@ -179,20 +179,20 @@ describe('format line', function()
     end)
 
     it('keyword replacing', function()
-        eq('自己的 loader 里可能并不能调用 ngx_lua 那些涉及',
-            format('自己的loader里可能并不能调用ngx_lua那些涉及'))
+        --eq('自己的 loader 里可能并不能调用 ngx_lua 那些涉及',
+            --format('自己的loader里可能并不能调用ngx_lua那些涉及'))
         -- 像这种类型的，手工替换 ngx-lua 成 ngx_lua 吧
-        eq('尽量使用 ngx-lua 提供的官方库', format('尽量使用 ngx-lua 提供的官方库'))
-        eq('Nginx 是一个高性能 web 服务器，而 OpenResty 不仅仅是 Nginx + Lua',
-            format('nginx是一个高性能web服务器，而Openresty不仅仅是nginx+lua'))
-        eq('让我们打开 nginx.conf', format('让我们打开 nginx.conf'))
+        --eq('尽量使用 ngx-lua 提供的官方库', format('尽量使用 ngx-lua 提供的官方库'))
+        --eq('Nginx 是一个高性能 web 服务器，而 OpenResty 不仅仅是 Nginx + Lua',
+            --format('nginx是一个高性能web服务器，而Openresty不仅仅是nginx+lua'))
+        --eq('让我们打开 nginx.conf', format('让我们打开 nginx.conf'))
     end)
 
     it('ignore links but parse link title', function()
-        eq('[OpenResty](指向openresty.org)',
-            format('[openresty](指向openresty.org)'))
-        eq('![OpenResty](指向openresty.org)',
-            format('![openresty](指向openresty.org)'))
+        --eq('[OpenResty](指向openresty.org)',
+            --format('[openresty](指向openresty.org)'))
+        --eq('![OpenResty](指向openresty.org)',
+            --format('![openresty](指向openresty.org)'))
         eq('![](../images/nginx.png)', format('![](../images/nginx.png)'))
         eq('请看下面的状态转换图（图片来自[「The TCP/IP Guide」](http://www.tcpipguide.com/)）',
             format('请看下面的状态转换图（图片来自[「The TCP/IP Guide」](http://www.tcpipguide.com/)）'))

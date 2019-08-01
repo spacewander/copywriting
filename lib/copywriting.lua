@@ -95,7 +95,8 @@ local function format(text)
         return placeholder
     end)
 
-    text = replace_word(add_space(text))
+    text = add_space(text)
+    --text = replace_word(add_space(text))
 
     i = 0
     text = text:gsub(placeholder, function()
