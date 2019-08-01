@@ -116,6 +116,12 @@ function _M.format(line)
     if from then
         return line:sub(from, to) .. _M.format(line:sub(to+1))
     end
+    -- 避免格式化无序列表的起始标记
+    local from, to = line:find('^[*+-]%s+')
+    if from then
+        return line:sub(from, to) .. _M.format(line:sub(to+1))
+    end
+
     local links = {}
     local i = 1
     -- 保护链接文本

@@ -98,6 +98,11 @@ describe('format line', function()
         eq('fixture.md', format('fixture.md'))
     end)
 
+    it("don't add space after some punctuations if it is the mark of unorder list", function()
+        eq('* Moreover, OpenResty *support', format('* Moreover, OpenResty *support'))
+        eq('* Moreover, OpenResty *support* something', format('* Moreover, OpenResty *support*something'))
+    end)
+
     it('add space before some punctuations if there is no space', function()
         eq('我们不再尝试使用 if 来判断 $uri 是否存在', format('我们不再尝试使用 if 来判断$uri 是否存在'))
         eq('我们不再尝试使用 if 来判断 $uri 是否存在', format('我们不再尝试使用 if 来判断 $uri 是否存在'))
